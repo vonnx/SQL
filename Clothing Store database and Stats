@@ -1,0 +1,32 @@
+CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, item text, section TEXT, price INTEGER, popularity INTEGER);
+INSERT INTO clothing_store VALUES (1, "short sleeve", "top", 5.99, 85);
+INSERT INTO clothing_store VALUES (2, "long sleeve", "top", 9.99, 95);
+INSERT INTO clothing_store VALUES (3, "crop top", "top", 6.99, 99);
+INSERT INTO clothing_store VALUES (4, "pants", "bottoms", 10.99, 98);
+INSERT INTO clothing_store VALUES (5, "shorts", "bottoms", 10.99, 98);
+INSERT INTO clothing_store VALUES (6, "cargo pants", "bottoms", 15.99, 80);
+INSERT INTO clothing_store VALUES (7, "circle skirt", "bottoms", 14.99, 75);
+INSERT INTO clothing_store VALUES (8, "pencil skirt", "bottoms", 8.99, 77);
+INSERT INTO clothing_store VALUES (9, "long skirt", "bottoms", 13.99, 85);
+INSERT INTO clothing_store VALUES (10, "necklace", "accessories", 6.99, 96);
+INSERT INTO clothing_store VALUES (11, "ring", "accessories", 5.99, 90);
+INSERT INTO clothing_store VALUES (12, "headband", "accessories", 4.99, 92);
+INSERT INTO clothing_store VALUES (13, "bandana", "accessories", 4.99, 99);
+INSERT INTO clothing_store VALUES (14, "boots", "shoes",
+19.99, 97);
+INSERT INTO clothing_store VALUES (15, "sandals", "shoes", 15.99, 80);
+
+--display the database ordered by price
+SELECT * FROM clothing_store 
+ORDER BY price;
+
+--displays the average price from items considered bottoms
+SELECT AVG(price)
+FROM clothing_store 
+WHERE section="bottoms";
+
+--displays the top ten items by popularity
+SELECT item, price, popularity 
+FROM clothing_store 
+ORDER BY popularity desc
+limit 10
